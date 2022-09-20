@@ -239,10 +239,10 @@ mark {
 .container .row {
     margin-bottom: 0;
 }
-
+/* 更改导航栏颜色 */
 .bg-color {
-    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
-    /*background:#000B3F;*/
+    /*background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);*/
+    background:#000B3F;
 }
 
 .text-color {
@@ -282,7 +282,8 @@ nav {
 
 /* 修改导航栏不透明 */
 header .nav-transparent {
-    background-color: transparent !important;
+    /*background-color: transparent !important;*/
+    background-color: #000B3F;
     background-image: none;
     box-shadow: none;
 }
