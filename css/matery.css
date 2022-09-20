@@ -241,7 +241,8 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+    /*background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);*/
+    background:#000B3F;
 }
 
 .text-color {
@@ -280,7 +281,8 @@ nav {
 }
 
 header .nav-transparent {
-    background-color: transparent !important;
+    /*background-color: transparent !important;*/
+    background-color: #000B3F;
     background-image: none;
     box-shadow: none;
 }
@@ -567,6 +569,7 @@ header .go-back i {
     content: "";
 }
 
+/* Digital signage title */
 .bg-cover .container {
     position: relative;
     color: rgb(13, 116, 90);
@@ -579,7 +582,7 @@ header .go-back i {
     margin-bottom: 20px;
     position: relative;
 }
-
+/* Digital signage sub title */
 .bg-cover .description {
     font-weight: 300;
     font-size: 1.25rem;
