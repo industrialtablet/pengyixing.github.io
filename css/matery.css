@@ -280,6 +280,7 @@ nav {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 7px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
+/* 修改导航栏不透明 */
 header .nav-transparent {
     /*background-color: transparent !important;*/
     background-color: #000B3F;
@@ -375,14 +376,15 @@ header .side-nav .social-link {
     text-align: center;
 }
 
+/* 封面按钮 START GITHUB */
 .cover-btns a {
     margin: 10px 15px;
     padding: 0 35px;
     height: 45px;
     line-height: 45px;
     font-size: 1rem;
-    color: #fff;
-    border: 1px solid #fff;
+    color: rgb(62, 62, 62);
+    border: 1px solid #626262;
     background-color: transparent;
     border-radius: 30px;
     box-shadow: none;
