@@ -413,18 +413,34 @@
 </ul>
 <p>The official recommendation is the Ubuntu 20.04 operating system.</p>
 <p>The initialization of the compilation environment can refer to <a target="_blank" rel="noopener" href="http://source.android.com/source/initializing.html">http://source.android.com/source/initializing.html</a> 。</p>
-<h2 id="Ubuntu-18-04-and-20-04-package-installation-reference"><a href="#Ubuntu-18-04-and-20-04-package-installation-reference" class="headerlink" title="Ubuntu 18.04 and 20.04 package installation reference:"></a>Ubuntu 18.04 and 20.04 package installation reference:</h2><pre class=" language-bash"><code class="language-bash">$ <span class="token function">sudo</span> update
-$ <span class="token function">sudo</span> apt <span class="token function">install</span> curl python <span class="token function">git</span>
-$ <span class="token function">sudo</span> apt <span class="token function">install</span> openjdk-8-jdk
-$ <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> git-core gnupg flex bison build-essential <span class="token function">zip</span> curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386
-libncurses5 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
-$ <span class="token function">sudo</span> apt <span class="token function">install</span> device-tree-compiler
+<h2 id="Ubuntu-18-04-and-20-04-package-installation-reference"><a href="#Ubuntu-18-04-and-20-04-package-installation-reference" class="headerlink" title="Ubuntu 18.04 and 20.04 package installation reference:"></a>Ubuntu 18.04 and 20.04 package installation reference:</h2><pre class=" language-bash"><code class="language-bash">$ <span class="token function">sudo</span> <span class="token function">apt-get</span> update
+$ <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> curl python <span class="token function">git</span>
+$ <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> openjdk-8-jdk
+$ <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> git-core gnupg flex bison build-essential <span class="token function">zip</span> curl zlib1g-dev gcc-multilib g++-multilib
+libc6-dev-i386 libncurses5 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev
+libxml2-utils xsltproc unzip fontconfig
+$ <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> device-tree-compiler
 $ <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> libssl-dev
-$ <span class="token function">sudo</span> apt <span class="token function">install</span> u-boot-tools 
-$ <span class="token function">sudo</span> apt <span class="token function">install</span> gcc-arm-linux-gnueabihf
-$ <span class="token function">sudo</span> apt <span class="token function">install</span> gcc-aarch64-linux-gnu
-$ <span class="token function">sudo</span> apt <span class="token function">install</span> gcc-arm-none-eabi
-$ <span class="token function">sudo</span> apt <span class="token function">install</span> liblz4-tool
+$ <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> u-boot-tools 
+$ <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> gcc-arm-linux-gnueabihf
+$ <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> gcc-aarch64-linux-gnu
+$ <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> gcc-arm-none-eabi
+$ <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> liblz4-tool
+</code></pre>
+<h2 id="Install-Extra-Toolchains-For-The-Amlogic-Platform"><a href="#Install-Extra-Toolchains-For-The-Amlogic-Platform" class="headerlink" title="Install Extra Toolchains For The Amlogic Platform"></a>Install Extra Toolchains For The Amlogic Platform</h2><ul>
+<li>The Amlogic Platform requires extra toolchains for cross-compiling, you will need to follow these steps to setup:</li>
+</ul>
+<h3 id="Install-Cross-Compiler-for-U-Boot-BL"><a href="#Install-Cross-Compiler-for-U-Boot-BL" class="headerlink" title="Install Cross Compiler for U-Boot BL:"></a>Install Cross Compiler for U-Boot BL:</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">chmod</span> 777 /opt/
+<span class="token function">tar</span> -zxvf CodeSourcery.tar.gz -C /opt
+<span class="token function">tar</span> -xvf gcc-linaro-aarch64-none-elf-4.8-2013.11_linux.tar -C /opt
+<span class="token function">tar</span> -zxvf gnutools.tar.gz -C /opt
+<span class="token function">tar</span> -zxvf arc-4.8-amlogic-20130904-r2.tar.gz -C /opt
+</code></pre>
+<h3 id="Install-Cross-Compiler-for-Linux-Kernel"><a href="#Install-Cross-Compiler-for-Linux-Kernel" class="headerlink" title="Install Cross-Compiler for Linux Kernel:"></a>Install Cross-Compiler for Linux Kernel:</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">tar</span> -xvf gcc-linaro-aarch64-linux-gnu-4.9-2014.09_linux.tar -C /opt
+<span class="token function">tar</span> -zxvf gcc-linaro-arm-linux-gnueabihf.tar.gz -C /opt
+</code></pre>
+<h3 id="Set-Env-for-build"><a href="#Set-Env-for-build" class="headerlink" title="Set Env for build"></a>Set Env for build</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">chmod</span> u+x TOOLSENV.sh
+<span class="token function">sudo</span> <span class="token function">cp</span> TOOLSENV.sh -P /etc/profile.d
 </code></pre>
 
                 
